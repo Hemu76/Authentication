@@ -14,14 +14,14 @@
         }
 
         h1 {
-            background-color: #4285f4;
+            background-color: #21211f;
             color: #fff;
             padding: 20px;
             text-align: center;
         }
 
         table {
-            width: 100%;
+            width: 98%;
             border-collapse: collapse;
             margin: 20px;
             background-color: #fff;
@@ -34,7 +34,8 @@
         }
 
         th {
-            background-color: #f2f2f2;
+            background-color: #d5dede;
+            color: #333;
         }
 
         tr:hover {
@@ -43,7 +44,7 @@
 
         a {
             text-decoration: none;
-            color: #4285f4;
+            color: #007bff;
         }
 
         a:hover {
@@ -57,8 +58,6 @@
     <table border="1">
         <thead>
             <tr>
-                
-                
                 <th>Patient Name</th>
                 <th>Date of Birth</th>
                 <th>Gender</th>
@@ -74,8 +73,6 @@
         </thead>
         <tbody>
             <tr th:each="claimApp : ${claimApplications}">
-                
-                
                 <td th:text="${claimApp.patientName}"></td>
                 <td th:text="${claimApp.dateOfBirth}"></td>
                 <td th:text="${claimApp.gender}"></td>
@@ -87,7 +84,7 @@
                 <td th:text="${claimApp.treatment}"></td>
                 <td th:text="${claimApp.claimAmountRequested}"></td>
                 <td>
-                    <a th:href="@{'/getClaim?policy=' + ${claimApp.clamIplcId}}">Process Application</a>
+                    <a th:href="@{'/getClaim?policy=' + ${claimApp.clamIplcId}}" style="background-color: #4285f4; color: #fff; padding: 5px 10px; text-decoration: none;">Process Application</a>
                 </td>
             </tr>
         </tbody>
